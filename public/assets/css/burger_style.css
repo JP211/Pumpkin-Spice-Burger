@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    background: orange;
+}
+
+body {
+    font-size: 18px;
+    line-height: 34px;
+    font-family: "Arial", "Helvetica", Helvetica, sans-serif;
+    color: #777;
+}
+
+.eaten {
+  color: white;
+  font-size: 20pt;
+}
+.noteaten {
+  color: white;
+  font-size: 20pt;
+}
+
+.add {
+  color: white;
+  font-size: 20pt;
+}

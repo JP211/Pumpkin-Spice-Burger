@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 id="title">Eat All The Burgers!</h1>
+  <h3 id="subtitle">Add a burger on the right & when ready devour it! </br>In case of indigestion, delete the bad burger memories on the left!</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group eaten">
+        {{#each data}}
+          {{#if this.devoured}}
+        <li class="list-group-item">
+          <form action = "/deleteOne/{{this.burger_name }}" method="post">
+            <button class="eaten" type="submit"> {{this.burger_name}}
+            </button>
+          </form>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group noteaten">
+        {{#each data}}
+          {{#if this.devoured}}
+            {{else}}
+        <li class="list-group-item">
+          <form action = "/updateOne/{{this.burger_name }}" method="post">
+            <button class="noteaten" type="submit"> {{this.burger_name}}
+            </button>
+          </form>
+        </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <ul class="list-group add">
+        <li class="list-group-item">
+          <form action="/insertOne" method="post">
+            <input name="burgertoadd" placeholder="Add a new burger"> 
+            </input>
+            <button class="add" type="submit">Burger Me!
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
